@@ -1,8 +1,12 @@
+// Created by Nathan @ 08-10-24
+// Faça um programa que carregue uma matriz 3 x 5 com números inteiros
+// calcule e mostre a quantidade de elementos entre 15 e 20
 #include <stdio.h>
 
 int main()
 {
-    int arr[3][5], between[15];
+    int arr[3][5], between[15]; // Declaring matrix and array
+    // Loop for capturing the array values
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 5; j++)
@@ -12,7 +16,8 @@ int main()
         }
     }
 
-    int total = 0;
+    int total = 0; // Variable that will hold the total amount of numbers between 15 and 20
+    // Loop for checking wich the values are between the desired range
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 5; j++)
@@ -25,10 +30,14 @@ int main()
         }
     }
 
-    printf("The total of numbers between 15 and 20 is: %d\nThose being: ", (total));
+    // Printing the results
+    printf("The total of numbers between 15 and 20 is: %d\n", (total));
 
-    for (int i = 0; i < total; i++)
-    {
-        printf("[%d] ",between[i]);
+    if (total > 0){
+        printf("Those being: ");
+        for (int i = 0; i < total; i++)
+        {
+            printf("[%d] ", between[i]);
+        }
     }
 }
