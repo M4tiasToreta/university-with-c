@@ -38,7 +38,6 @@ int main()
 
         if (menor == 0)
         {
-            printf("MENOR");
             menor = comission[i];
             in = i;
         }
@@ -60,6 +59,8 @@ int main()
     {
         printf("Name: %s \t| Total Sales: %.2f \t| Comission: %.2f\n", names[i], total[i], comission[i]);
     }
-    printf("Biggest pay check is %s's  with a total of %.2f", names[im], maior);
+    
+    printf("\nThe total revenue was: %.2f", total_store_sales);
+    printf("\nBiggest pay check is %s's  with a total of %.2f", names[im], maior);
     printf("\nSmallest pay check is %s's  with a total of %.2f", names[in], menor);
 }
