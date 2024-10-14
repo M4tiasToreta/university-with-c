@@ -1,22 +1,58 @@
 #include <stdio.h>
+#include <string.h>
 
-int main() {
-    char nomes[3][49];
 
-    for (int i=0; i<3; i++){
-        printf("Digite o nome%d:\n", i+1);
-        if (i==0) {
-            scanf("%s", nomes[i]);
-        }
-        if (i==1) {
-            scanf("%s", nomes[i]);
-        }
-        if (i==2) {
-            scanf("%s", nomes[i]);
+int getFirstAndLast(char nomes[3][50]){
+    for (int i = 0; i < 3; i++)
+    {
+        char *token = strtok(nomes[i], " ");
+        char *primeiro_nome = NULL;
+        char *ultimo_nome = NULL;
+
+        if (token != NULL) {
+            primeiro_nome = token;  
         }
 
-        printf("%s", nomes[2]);
+        while (token != NULL) {
+            ultimo_nome = token; 
+            token = strtok(NULL, " ");
+        }
+
+        if (ultimo_nome == primeiro_nome){
+            printf("%s",primeiro_nome);
+        } else{
+            printf("%s %s",primeiro_nome,ultimo_nome);
+        } 
     }
 
     return 0;
 }
+
+int getFirstLetters(char nomes[3][50]){
+    for (int i = 0; i < 3; i++)
+    {
+        printf("%c",nomes[i][0]);
+        for (int j = 0; j < sizeof(nomes[i]); j++)
+        {
+            if (nomes[i][j] == ' '){
+                printf("%c",nomes[i][j+1]);
+            }    
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+int main() {
+    char nomes[3][50];
+
+    for (int i=0; i<3; i++){
+        printf("Enter name %d: ", i + 1);
+        fgets(nomes[i], sizeof(nomes[i]), stdin);
+    }
+
+    getFirstAndLast(nomes);
+
+    getFirstLetters(nomes);
+}
+
