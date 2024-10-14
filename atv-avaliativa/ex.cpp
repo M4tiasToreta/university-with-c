@@ -1,16 +1,22 @@
 #include <stdio.h>
 
 int main() {
-    char nome1[49], nome2[49];
+    char nomes[3][49];
 
     for (int i=0; i<3; i++){
         printf("Digite o nome%d:\n", i+1);
         if (i==0) {
-            scanf("Digite o nome1: %s", nome1)
+            scanf("Digite o nome 1: %s", nomes[i]);
         }
-        scanf("%s", nome1);
+        if (i==1) {
+            scanf("Digite o nome 2: %s", nomes[i]);
+        }
+        if (i==2) {
+            scanf("Digite o nome 3: %s", nomes[i]);
+        }
 
-        printf("%s", nome1);
+        printf("%s", nomes[2]);
     }
+
     return 0;
 }
