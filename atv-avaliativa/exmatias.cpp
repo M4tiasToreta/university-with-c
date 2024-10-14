@@ -56,18 +56,25 @@ int main() {
     printf("a) Abreviar nomes do meio\n");
     printf("b) Tirar nomes do meio\n");
     printf("c) Apenas primeiras letras\n");
-    scanf("%s", letra);
-    if(strcmp(letra, "a")==0) {
-        printf("Em implementação\n");
-    }
-    else if(strcmp(letra, "b")==0) {
-        getFirstAndLast(nomes);
-    }
-    else if(strcmp(letra, "c")==0) {
-        getFirstLetters(nomes);
-    }
-    else {
-        printf("Por favor, selecione uma letra válida.\n");
+    printf("s) para sair\n");
+    while (2>1) {
+        printf("Digite a letra\n");
+        scanf("%s", letra);
+        if(strcmp(letra, "a")==0) {
+            printf("Em implementação\n");
+        }
+        else if(strcmp(letra, "b")==0) {
+            getFirstAndLast(nomes);
+        }
+        else if(strcmp(letra, "c")==0) {
+            getFirstLetters(nomes);
+        }
+        else if (strcmp(letra, "s")==0){
+            break;
+        }
+        else {
+            printf("Por favor, selecione uma letra válida.\n");
+        }
     }
     
     return 0;
