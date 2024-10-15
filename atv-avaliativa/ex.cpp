@@ -3,9 +3,11 @@
 
 
 int getFirstAndLast(char nomes[3][50]){
+    char copy[50];
     for (int i = 0; i < 3; i++)
-    {
-        char *token = strtok(nomes[i], " ");
+    {  
+        strcpy(copy, nomes[i]);
+        char *token = strtok(copy, " ");
         char *primeiro_nome = NULL;
         char *ultimo_nome = NULL;
 
