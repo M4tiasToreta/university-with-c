@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
+
 int getFirstAndLast(char nomes[3][50]){
     char copy[50];
     for (int i = 0; i < 3; i++)
@@ -23,8 +24,9 @@ int getFirstAndLast(char nomes[3][50]){
             printf("%s",primeiro_nome);
         } else{
             printf("%s %s",primeiro_nome,ultimo_nome);
-        }       
+        } 
     }
+
     return 0;
 }
 
