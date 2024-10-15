@@ -57,4 +57,3 @@ int main() {
 
     getFirstLetters(nomes);
 }
-
