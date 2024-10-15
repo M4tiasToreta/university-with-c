@@ -4,24 +4,17 @@
 
 int getAbbrevName(char nomes[3][50])
 {
-    char copy[50];
     char copy2[50];
     for (int i = 0; i < 3; i++)
     {
-        strcpy(copy, nomes[i]);
-        char *token1 = strtok(copy, " "), *last, *next_last;
+        char *last, *next_last;
         char *primeiro_nome1;
         char *ultimo_nome2;
 
         int cont = 0;
         char iniciais[20] = {};
         
-        strcpy(copy2, nomes[i]);
-        while (token1 != NULL) {
-            ultimo_nome2 = token1; 
-            token1 = strtok(NULL, " ");
-        }
-        
+        strcpy(copy2, nomes[i]);  
         last = strtok(copy2, " ");
 
         while (true)
@@ -33,9 +26,17 @@ int getAbbrevName(char nomes[3][50])
             }
             else
             {
-                last = strtok(NULL, " ");
-                if (last == NULL)
+                if (cont == 2) {
+                    last = strtok(NULL, " ");
+                    next_last = strtok(NULL, " ");
+                }
+                else {
+                    last = next_last;
+                    next_last = strtok(NULL, " ");
+                }
+                if (next_last == NULL)
                 {
+                    ultimo_nome2 = last;
                     break;
                 }
                 else 
@@ -44,7 +45,7 @@ int getAbbrevName(char nomes[3][50])
                 }
             }
         }
-        iniciais[strlen(iniciais) - 3] = '\0';
+        // iniciais[strlen(iniciais) - 3] = '\0';
         printf("Nome abreviado: %s %s%s\n", primeiro_nome1, iniciais, ultimo_nome2);
     }
     return 0;
